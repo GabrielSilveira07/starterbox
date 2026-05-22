@@ -1,17 +1,38 @@
-from models.usuario import Usuario  ##importando a classe Usuario
-from models.tarefa import Tarefas   ##importando a classe Tarefas
-from models.projeto import Projeto  ##importando a classe Projeto
+from models.usuario import Usuario
+from models.tarefa import Tarefas
+from models.projeto import Projeto
 
-usuario = Usuario("Gabriel", "gabriel@email.com")   ##define o usuario como Gabriel e seu email 
 
-projeto = Projeto("StarterBox", usuario)    ##define o projeto como StarterBox para o usuario Gabriel
+print("\n=== STARTERBOX ===")
 
-tarefa1 = Tarefas("Criar projeto", "criando o projeto starterbox em python")    ##define que a tarefa é Criar Projeto junto da descrição
 
-projeto.adicionarTarefa(tarefa1)    ##agrega a tarefa1 ao projeto
+usuario = Usuario("Gabriel", "gabriel@email.com")
 
-tarefa1.concluir()  ##conclui a tarefa1
+projeto = Projeto("StarterBox", usuario)
 
-usuario.exibirDados1()  ##exibe os dados do usuario
 
-projeto.listarTarefas() ##lista as tarefas do projeto
+tarefa1 = Tarefas(
+    "Criar projeto",
+    "Criando o projeto StarterBox em Python",
+    "Alta",
+    "25/05/2026"
+)
+
+tarefa2 = Tarefas(
+    "Implementar banco",
+    "Criar conexão com SQLite",
+    "Média",
+    "30/05/2026"
+)
+
+
+projeto.adicionarTarefa(tarefa1)
+projeto.adicionarTarefa(tarefa2)
+
+
+tarefa1.concluir()
+
+
+usuario.exibirDados1()
+
+projeto.listarTarefas()
